@@ -1,0 +1,33 @@
+.notify {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border: 1px solid tomato;
+  background-color: tomato;
+  border: 2px solid black;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.notify-enter {
+  opacity: 0;
+  transform: translateX(10%);
+}
+
+.notify-enter-active {
+  opacity: 1;
+  transform: translateX(-150%);
+  transition: opacity 250ms ease-in-out, transform 200ms ease-in-out;
+}
+
+.notify-exit {
+  opacity: 1;
+  transform: translateX(-150%);
+}
+
+.notify-exit-active {
+  opacity: 0;
+  transform: translateX(10%);
+  transition: opacity 250ms ease-in-out, transform 200ms ease-in-out;
+}

@@ -35,3 +35,21 @@
   font-size: 20px;
   text-align: center;
 }
+
+.adddelete-enter {
+  transform: scale(0);
+}
+
+.adddelete-enter-active {
+  transform: scale(1);
+  transition: transform 250ms ease-in-out;
+}
+
+.adddelete-exit {
+  transform: scale(1);
+}
+
+.adddelete-exit-active {
+  transform: scale(0);
+  transition: transform 250ms ease-in-out;
+}

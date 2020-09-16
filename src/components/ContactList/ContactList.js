@@ -1,25 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './contactList.module.css';
+import './contactList.css';
+
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export function ContactList({ contactList, deleteContact }) {
   return (
-    <ul className={styles.list}>
+    <TransitionGroup component="ul" className="list">
       {contactList.map(contact => {
         return (
-          <li className={styles.item} key={contact.id}>
-            <span>{contact.name}</span>
-            <span>: {contact.number}</span>
-            <button
-              className={styles.button}
-              onClick={() => deleteContact(contact.id)}
-            >
-              Delete
-            </button>
-          </li>
+          <CSSTransition
+            key={contact.id}
+            timeout={250}
+            classNames="adddelete"
+            unmountOnExit
+          >
+            <li className="item" key={contact.id}>
+              <span>{contact.name}</span>
+              <span>: {contact.number}</span>
+              <button
+                className="button"
+                onClick={() => deleteContact(contact.id)}
+              >
+                Delete
+              </button>
+            </li>
+          </CSSTransition>
         );
       })}
-    </ul>
+    </TransitionGroup>
   );
 }
 
